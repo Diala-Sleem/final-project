@@ -61,7 +61,7 @@ img {
   z-index: 1;
   transition: var(--main-transition);
   text-transform: uppercase;
-  color: var( --main-color-gray);
+  color: var(--main-color-gray);
 }
 .main-title:hover {
   background: linear-gradient(transparent 0 0) top/100% calc(100% - 40px)
@@ -155,11 +155,12 @@ p,
   100% {
     top: 1px;
     filter: brightness(100%) grayscale(100%);
-    transform:  rotate(-5deg);
+    transform: rotate(-5deg);
   }
   50% {
     top: 90px;
-    filter: brightness(100%) grayscale(100%) drop-shadow(20px 5px 10px rgba(247, 243, 243, 0.5))  ;
+    filter: brightness(100%) grayscale(100%)
+      drop-shadow(20px 5px 10px rgba(247, 243, 243, 0.5));
     transform: rotateY(10deg) skewY(-10deg);
   }
 }
@@ -351,6 +352,16 @@ header .megamenu .links li a i {
   margin-right: 8px;
 }
 
+@media (max-width: 992px) {
+  header .main-nav > li > a {
+    height: 35px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 768px) {
   header .container .main-nav {
     display: none;
@@ -384,10 +395,10 @@ header .megamenu .links li a i {
   }
   header .main-nav > li > a {
     height: 35px;
-    width: 130px;
-    font-size: 14px;
+    width: 170px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    font-size: 14px;
   }
   header .main-nav > li:last-child {
     display: none;
@@ -412,10 +423,9 @@ header .megamenu .links li a i {
   background-size: cover;
   background-position: top;
   z-index: -1;
-  transform: skewY(-6deg) ;
+  transform: skewY(-6deg);
   transform-origin: top left;
   content: "";
-
 }
 .landing .container {
   min-height: calc(100vh - 73px);
@@ -427,29 +437,32 @@ header .megamenu .links li a i {
   flex: 1;
   /* transform: rotate(-6deg); */
   margin-top: 50px;
-
 }
 .landing .text h1 {
   font-size: 100px;
   font-weight: 700;
   padding-bottom: 10px;
-  margin:0;
+  margin: 0;
   letter-spacing: -2;
   text-transform: uppercase;
-  width:fit-content;
+  width: fit-content;
   color: white;
 
-  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 22px 30px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a,
+    0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222,
+    0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a,
+    0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212,
+    0 22px 30px rgba(0, 0, 0, 0.9);
 }
 .landing .text h2 {
   font-size: 28px;
   font-weight: 700;
   letter-spacing: 5px;
   line-height: 12px;
-  text-decoration:overline;
-  color:var(--main-color-gray);
+  text-decoration: overline;
+  color: var(--main-color-gray);
   padding: 15px 30px;
-  width:fit-content;
+  width: fit-content;
   text-transform: uppercase;
   text-shadow: 0 0px 20px #fff, 2px 2px 3px #2e2e2e;
 }
@@ -457,14 +470,13 @@ header .megamenu .links li a i {
   font-size: 20px;
   font-weight: 400;
   line-height: 1.7;
-  text-decoration:overline;
+  text-decoration: overline;
 
   max-width: 500px;
-  color:white;
-  width:fit-content;
+  color: white;
+  width: fit-content;
   padding: 10px 30px;
-  text-shadow: -1px 1px 4px  var( --main-color-gray);
-
+  text-shadow: -1px 1px 4px var(--main-color-gray);
 }
 
 .landing .image img {
@@ -505,32 +517,32 @@ header .megamenu .links li a i {
   }
   .landing .text h1 {
     font-size: 60px;
-    margin:0 auto;
+    margin: 0 auto;
   }
 }
 @media (max-width: 767px) {
   .landing .text h1 {
     font-size: 50px;
-    margin:  auto;
+    margin: auto;
   }
   .landing .text h2 {
     font-size: 16px;
     margin: 0 auto;
-padding:10px 0;
-}
+    padding: 10px 0;
+  }
   .landing .text p {
     font-size: 16px;
   }
   header .logo img {
-    height: 30px; 
-}
-.landing .text {
-  padding-top: 10px;
-}
-.landing::before {
-  top: -100px;
-  background-position: top center;
-}
+    height: 30px;
+  }
+  .landing .text {
+    padding-top: 10px;
+  }
+  .landing::before {
+    top: -100px;
+    background-position: top center;
+  }
 }
 
 /* ---------------------end Landing------------------ */
@@ -540,7 +552,6 @@ padding:10px 0;
   padding-top: var(--main-padding-top);
   padding-bottom: var(--main-padding-bottom);
   position: relative;
-
 }
 .articles .container {
   display: grid;
@@ -639,8 +650,7 @@ padding:10px 0;
   height: 200px;
   width: 100%;
   object-fit: cover;
-  object-position:top left;
-  
+  object-position: top left;
 
   transition: var(--main-transition);
 }
@@ -649,13 +659,12 @@ padding:10px 0;
 }
 @media (max-width: 767px) {
   .gallery .box .image img {
-    object-position:top center;
+    object-position: top center;
   }
   .gallery .container {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
-
 
 /*---------------------- Start Gallery ---------------------*/
 
@@ -736,12 +745,12 @@ padding:10px 0;
   background-color: rgba(242, 135, 5, 0.7);
 }
 .projects .quality h3::after {
-  background-color: #F28705;
+  background-color: #f28705;
 }
 .projects .quality a {
-  border: 1px solid #F28705;
-  color: #F28705;
-  background: linear-gradient(to right, #F28705 50%, white 50%);
+  border: 1px solid #f28705;
+  color: #f28705;
+  background: linear-gradient(to right, #f28705 50%, white 50%);
   background-size: 200%;
   background-position: right bottom;
 }
@@ -750,12 +759,12 @@ padding:10px 0;
   background-color: rgba(112, 115, 93, 0.7);
 }
 .projects .time h3::after {
-  background-color: #70735D;
+  background-color: #70735d;
 }
 .projects .time a {
-  border: 1px solid #70735D;
-  color: #70735D;
-  background: linear-gradient(to right, #70735D 50%, white 50%);
+  border: 1px solid #70735d;
+  color: #70735d;
+  background: linear-gradient(to right, #70735d 50%, white 50%);
   background-size: 200%;
   background-position: right bottom;
 }
@@ -764,12 +773,12 @@ padding:10px 0;
   background-color: rgba(3, 76, 140, 0.7);
 }
 .projects .passion h3::after {
-  background-color: #034C8C;
+  background-color: #034c8c;
 }
 .projects .passion a {
-  border: 1px solid #034C8C;
-  color: #034C8C;
-  background: linear-gradient(to right, #034C8C 50%, white 50%);
+  border: 1px solid #034c8c;
+  color: #034c8c;
+  background: linear-gradient(to right, #034c8c 50%, white 50%);
   background-size: 200%;
   background-position: right bottom;
 }
@@ -786,6 +795,25 @@ padding:10px 0;
 
 /* ----------------- End Projects ---------------------------*/
 
+/* ---------------------Start Up button ---------------------- */
+.up {
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  position: fixed;
+  background-color: var(--main-color);
+  right: 0;
+  top: calc(100vh - 73px);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
+.up a {
+  color: white;
+  text-decoration: none;
+}
+/* ---------------------End Up button---------------------- */
+
 /* start team Members */
 .team-members {
   padding-top: var(--main-padding-top);
@@ -793,14 +821,12 @@ padding:10px 0;
   position: relative;
   background-color: var(--main-color-background);
   height: calc(100vh - 73px);
-
 }
 .team-members .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 60px 40px;
   padding-top: 60px;
-
 }
 .team-members .box {
   padding: 20px;
@@ -821,7 +847,7 @@ padding:10px 0;
   border: 10px solid var(--main-color-background);
 }
 .team-members .box .grayscale {
-filter: grayscale(100);
+  filter: grayscale(100);
 }
 .team-members .box h3 {
   margin-bottom: 10px;
@@ -848,7 +874,7 @@ filter: grayscale(100);
 /* --------------------End team Members--------------------- */
 
 /* --------------------Start references--------------------- */
-.team {
+.background-main {
   background-color: var(--main-color-background);
 }
 .references {
@@ -856,7 +882,6 @@ filter: grayscale(100);
   padding-bottom: var(--main-padding-bottom);
   position: relative;
   height: calc(100vh - 73px);
-
 }
 .references .container {
   display: grid;
@@ -943,7 +968,6 @@ filter: grayscale(100);
   padding-bottom: var(--main-padding-bottom);
   position: relative;
   height: calc(100vh - 73px);
-
 }
 .my-skills .container {
   display: flex;
@@ -954,44 +978,42 @@ filter: grayscale(100);
   flex: 1;
 }
 .my-skills .skill {
-  margin-bottom: 15px;;
+  margin-bottom: 15px;
 }
 
 .my-skills .skill h4 {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding-bottom: 5px;
-font-weight: 300;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5px;
+  font-weight: 300;
 }
 .my-skills .skill h4 span {
- font-size: 12px;
- border-bottom: 1px solid var(--main-color);
- padding: 3px 5px;
- border-radius: 4px;
- color: var(--main-color)
+  font-size: 12px;
+  border-bottom: 1px solid var(--main-color);
+  padding: 3px 5px;
+  border-radius: 4px;
+  color: var(--main-color);
 }
 .my-skills .skill .progress {
-  height:15px;
-  background-color:  var(--main-color-background-light);
+  height: 15px;
+  background-color: var(--main-color-background-light);
   position: relative;
   border-radius: 10px;
 }
 .my-skills .skill .progress span {
-position: absolute;
-left: 0;
-top: 0;
-height: 100%;
-background-color: var(--main-color-alt);
-border-radius: 10px;
-
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: var(--main-color-alt);
+  border-radius: 10px;
 }
 
 .my-skills .container img {
   max-width: 50%;
   width: 100%;
   padding: 40px;
-
 }
 @media (max-width: 991px) {
   .my-skills .container img {
@@ -1000,20 +1022,103 @@ border-radius: 10px;
 }
 
 /* ---------------------End My Skills---------------------- */
-.up{
-  width: fit-content;
-  height: fit-content;
-  padding:10px;
-  position:fixed;
-  background-color: var(--main-color);
-  right: 0;
-  top:calc(100vh - 73px);
-  writing-mode: vertical-rl;
-text-orientation: mixed;
-transform: rotate(180deg);
 
+/* ---------------------Start contact---------------------- */
+.contact {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  height: calc(100vh - 107px);
 }
-.up a{
-  color:white;
-  text-decoration: none;
+
+.contact .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 90%;
 }
+.contact .container form {
+  flex-basis: 60%;
+}
+.contact .container form .main-input {
+  display: flex;
+  width: 100%;
+  border: none;
+  margin-bottom: 40px;
+  padding: 15px;
+  border-radius: 20px 0 10px;
+}
+.contact .container form input:focus {
+  outline: none;
+}
+.contact .container form .main-input:nth-child(3) {
+  height: 150px;
+}
+.contact .container form input[type="submit"] {
+  background-color: var(--main-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 0 10px;
+  transition: var(--main-transition);
+  border: none;
+  display: flex;
+  margin-left: auto;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.contact .container form input[type="submit"]:hover {
+  color: var(--main-color);
+  background-color: white;
+  border: none;
+  border-radius: 0 10px;
+  box-shadow: 1px 2px 10px var(--main-box-shadow-dark);
+}
+
+.contact .container .info {
+  flex-basis: 30%;
+  height: 65%;
+  color: var(--main-color);
+  border-left: 1px solid var(--main-color);
+  padding-left: 10px;
+}
+.contact .container .info h4 {
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+.contact .container .info .phone:hover {
+  color: var(--main-color-gray);
+}
+.contact .container .info h4:nth-of-type(2) {
+  margin-top: 50px;
+}
+.contact .container .info address p {
+  line-height: 10px;
+}
+
+@media (max-width: 768px) {
+  .contact .container {
+    flex-direction: column;
+    width: 100%;
+    padding: 40px;
+  }
+  .contact .container form {
+    padding-right: 0px;
+    width: 100%;
+  }
+  .contact .container .info h4 {
+    margin-bottom: 0px;
+  }
+  .contact .container .info h4:nth-of-type(2) {
+    margin-top: 00px;
+  }
+  .contact {
+    height: fit-content;
+  }
+}
+
+@media (max-width: 992px) {
+  .contact {
+    height: fit-content;
+  }
+}
+
+/* ---------------------End My contact---------------------- */
