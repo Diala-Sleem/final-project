@@ -150,6 +150,15 @@ p,
 
 /* ----------------------End Global Rules---------------------*/
 /* start animation */
+@keyframes megamenu-move {
+  0% {
+    right: -150%;
+  }
+  100% {
+    right: 0;
+  }
+}
+
 @keyframes up-down {
   0%,
   100% {
@@ -260,10 +269,7 @@ header .main-nav {
   display: flex;
   position: relative;
 }
-header .other:hover .megamenu {
-  visibility: visible;
-  top: calc(100% + 2px);
-}
+
 header .main-nav > li > a {
   display: flex;
   justify-content: center;
@@ -301,19 +307,25 @@ header nav .bar {
   display: none;
   font-size: 25px;
 }
+/* ------------megamenu---------------- */
+header .other:hover .megamenu {
+  top: calc(100% + 2px);
+  right: 0;
+  animation: megamenu-move 1.5s ease-in-out;
+  display: flex;
+}
 
 header .megamenu {
   position: absolute;
   width: 100%;
-  right: 0;
-  top: calc(100% + 50px);
+  top: calc(100% + 2px);
   padding: 30px;
   background-color: white;
   border-bottom: 4px solid var(--main-color);
-  visibility: hidden;
   display: flex;
   gap: 20px;
   transition: var(--main-transition);
+  display: none;
 }
 header .megamenu .links {
   min-width: 155px;
@@ -387,7 +399,7 @@ header .megamenu .links li a i {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    width: 130px;
+    width: 180px;
     position: absolute;
     top: 70px;
     right: 0;
@@ -395,14 +407,14 @@ header .megamenu .links li a i {
   }
   header .main-nav > li > a {
     height: 35px;
-    width: 170px;
+    width: 180px;
     display: flex;
     justify-content: flex-start;
     font-size: 14px;
   }
-  header .main-nav > li:last-child {
+  /* header .main-nav > li:last-child {
     display: none;
-  }
+  } */
 }
 /* ---------------------------End Header-----------------------------*/
 
@@ -807,6 +819,7 @@ header .megamenu .links li a i {
   writing-mode: vertical-rl;
   text-orientation: mixed;
   transform: rotate(180deg);
+  z-index: 10;
 }
 .up a {
   color: white;
@@ -820,7 +833,7 @@ header .megamenu .links li a i {
   padding-bottom: var(--main-padding-bottom);
   position: relative;
   background-color: var(--main-color-background);
-  height: calc(100vh - 73px);
+  /* height: calc(100vh - 155px); */
 }
 .team-members .container {
   display: grid;
@@ -881,7 +894,7 @@ header .megamenu .links li a i {
   padding-top: var(--main-padding-top);
   padding-bottom: var(--main-padding-bottom);
   position: relative;
-  height: calc(100vh - 73px);
+  /* height: calc(100vh - 155px); */
 }
 .references .container {
   display: grid;
@@ -967,7 +980,7 @@ header .megamenu .links li a i {
   padding-top: var(--main-padding-top);
   padding-bottom: var(--main-padding-bottom);
   position: relative;
-  height: calc(100vh - 73px);
+  /* height: calc(100vh - 155px); */
 }
 .my-skills .container {
   display: flex;
@@ -1027,7 +1040,7 @@ header .megamenu .links li a i {
 .contact {
   padding-top: var(--main-padding-top);
   padding-bottom: var(--main-padding-bottom);
-  height: calc(100vh - 107px);
+  /* height: calc(100vh - 155px); */
 }
 
 .contact .container {
@@ -1051,7 +1064,7 @@ header .megamenu .links li a i {
   outline: none;
 }
 .contact .container form .main-input:nth-child(3) {
-  height: 150px;
+  height: 100px;
 }
 .contact .container form input[type="submit"] {
   background-color: var(--main-color);
@@ -1122,3 +1135,60 @@ header .megamenu .links li a i {
 }
 
 /* ---------------------End My contact---------------------- */
+
+/* Start Footer */
+footer {
+  margin-top: var(--main-padding-top);
+  background-color: white;
+  -webkit-box-shadow: 0 0 10px var(--main-box-shadow);
+  -moz-box-shadow: 0 0 10px var(--main-box-shadow);
+  box-shadow: 0 0 10px var(--main-box-shadow);
+
+  position: relative;
+  z-index: 1;
+}
+footer .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+footer .box {
+  display: flex;
+  /* flex-direction: column; */
+  width: 100%;
+  background-color: white;
+  border-bottom: 2px solid var(--main-color-border);
+}
+footer .box .links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--main-color-gray);
+  height: 40px;
+  padding: 0 15px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+footer .links > li > a {
+  color: var(--main-color);
+  display: block;
+  padding: 15px;
+  font-size: 12px;
+  font-weight: 300;
+}
+footer .box2 i {
+  color: var(--main-color-text);
+  flex-direction: row;
+  padding: 10px;
+}
+
+@media (max-width: 992px) {
+  footer .box {
+    flex-direction: column;
+  }
+}
+
+/* End Footer */
